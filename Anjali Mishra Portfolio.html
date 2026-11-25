@@ -1,0 +1,421 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Anjali Mishra Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a field-notebook-meets-dashboard page. One wide column, a ledger-style
+   "at a glance" panel in the hero, case studies set as report cards, and a real
+   chronological timeline for experience. */
+:root{
+  --bg:#F3F6F5;
+  --surface:#FFFFFF;
+  --ink:#13242B;
+  --muted:#53666D;
+  --line:#D5DEDC;
+  --accent:#0E6B66;
+  --accent-soft:#DCEDEA;
+  --marigold:#C98A12;
+  --marigold-soft:#F6E9CC;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E171A; --surface:#152227; --ink:#E3ECEA; --muted:#9AAEB2; --line:#26383E;
+    --accent:#5CC4B8; --accent-soft:#17332F; --marigold:#E7B54E; --marigold-soft:#3A2F17;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E171A; --surface:#152227; --ink:#E3ECEA; --muted:#9AAEB2; --line:#26383E;
+  --accent:#5CC4B8; --accent-soft:#17332F; --marigold:#E7B54E; --marigold-soft:#3A2F17;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--marigold);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+
+/* nav */
+nav.top{position:sticky;top:env(safe-area-inset-top, 0px);z-index:5;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:var(--bg)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.mark{font-family:var(--display);font-weight:800;font-size:1.05rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.mark span{color:var(--accent)}
+nav.top ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav.top a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500}
+nav.top a:hover{color:var(--ink)}
+@media (max-width:640px){nav.top ul{display:none}}
+
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:center;padding-block:72px 56px}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,6vw,4.2rem);line-height:1.02;letter-spacing:-.03em;margin:0 0 18px;text-wrap:balance}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:1.15rem;color:var(--muted);max-width:34em;margin:0 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:8px;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid var(--accent);cursor:pointer;font-family:var(--body)}
+.btn.primary{background:var(--accent);color:var(--bg)}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn:hover{filter:brightness(1.07)}
+
+.ledger{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px;min-width:0}
+.ledger h2{font-family:var(--mono);font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.ledger dl{margin:0;display:grid;grid-template-columns:auto 1fr;column-gap:16px}
+.ledger dt,.ledger dd{padding:12px 0;border-top:1px dashed var(--line);margin:0}
+.ledger dt{font-family:var(--display);font-weight:700;font-size:1.6rem;line-height:1.1;color:var(--ink);font-variant-numeric:tabular-nums}
+.ledger dd{color:var(--muted);font-size:.92rem;align-self:center}
+.ledger dt:first-of-type,.ledger dd:first-of-type{border-top:none}
+
+/* sections */
+section{padding-block:56px}
+section + section{border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+h2.sec{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,3.4vw,2.3rem);letter-spacing:-.02em;margin:0;text-wrap:balance}
+.sec-note{color:var(--muted);margin:0;max-width:38em}
+
+/* capabilities */
+.caps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.cap h3{font-family:var(--display);font-size:1.15rem;margin:0 0 8px}
+.cap p{margin:0;color:var(--muted)}
+.cap .k{font-family:var(--mono);font-size:.75rem;color:var(--marigold);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px}
+
+/* case studies */
+.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.case .meta{font-family:var(--mono);font-size:.75rem;color:var(--muted);letter-spacing:.04em}
+.case h3{font-family:var(--display);font-size:1.3rem;line-height:1.2;margin:0;letter-spacing:-.01em}
+.case p{margin:0;color:var(--muted)}
+.case .rows{display:grid;grid-template-columns:5.5em 1fr;gap:6px 12px;font-size:.92rem;margin:0}
+.case .rows dt{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);padding-top:3px}
+.case .rows dd{margin:0}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.tag{font-family:var(--mono);font-size:.74rem;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.case.feature{grid-column:1 / -1;display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center}
+.case.feature .txt{display:flex;flex-direction:column;gap:14px;min-width:0}
+
+/* baseline -> endline diagram (no data, a method sketch) */
+.flow{display:flex;flex-direction:column;gap:10px;min-width:0}
+.step{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.step b{font-family:var(--mono);font-size:.72rem;color:var(--bg);background:var(--accent);border-radius:6px;padding:3px 7px;font-weight:500;white-space:nowrap}
+.step span{font-size:.92rem}
+.step.end b{background:var(--marigold)}
+.arrow{height:14px;width:2px;background:var(--line);margin-left:28px}
+
+/* timeline */
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.timeline li{position:relative;padding:0 0 32px 36px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.timeline li.now::before{background:var(--accent)}
+.when{font-family:var(--mono);font-size:.78rem;color:var(--muted);letter-spacing:.03em}
+.timeline h3{font-family:var(--display);font-size:1.2rem;margin:2px 0 2px}
+.org{color:var(--accent);font-weight:600;margin:0 0 8px}
+.timeline ul{margin:0;padding-left:18px;color:var(--muted);max-width:44em}
+.timeline ul li{padding:0 0 4px 0}
+.timeline ul li::before{display:none}
+
+/* toolkit */
+.kit{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.kit div{border-top:2px solid var(--accent);padding-top:14px;min-width:0}
+.kit h3{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 10px;font-weight:500}
+.kit ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.kit li{padding:5px 11px;border:1px solid var(--line);border-radius:6px;font-size:.9rem;background:var(--surface)}
+
+/* education + research */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.edu{list-style:none;margin:0;padding:0}
+.edu li{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:14px 0;border-top:1px solid var(--line)}
+.edu li:first-child{border-top:none;padding-top:0}
+.edu strong{font-weight:600}
+.edu .yr{font-family:var(--mono);font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.edu small{grid-column:1 / -1;color:var(--muted);font-size:.9rem}
+.paper{background:var(--marigold-soft);border-radius:12px;padding:22px}
+.paper .meta{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--marigold)}
+.paper h3{font-family:var(--display);font-size:1.15rem;line-height:1.3;margin:8px 0}
+.paper p{margin:0;color:var(--ink);opacity:.85;font-size:.95rem}
+.paper + .paper{margin-top:16px}
+h3.sub{font-family:var(--display);font-size:1.2rem;margin:0 0 14px}
+.certs{columns:2;column-gap:28px;margin:0;padding-left:18px;color:var(--muted)}
+.certs li{break-inside:avoid;margin-bottom:6px}
+
+/* contact */
+.contact{background:var(--accent);color:var(--bg);border-radius:16px;padding:40px;display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center}
+.contact h2{font-family:var(--display);font-size:clamp(1.7rem,3.6vw,2.4rem);letter-spacing:-.02em;margin:0 0 10px;color:var(--bg);text-wrap:balance}
+.contact p{margin:0;opacity:.9}
+.chan{display:flex;flex-direction:column;gap:12px;min-width:0}
+.chan .row{display:flex;align-items:center;justify-content:space-between;gap:10px;background:color-mix(in srgb, var(--bg) 14%, transparent);border-radius:10px;padding:10px 14px;flex-wrap:wrap}
+.chan .row span{font-family:var(--mono);font-size:.9rem;user-select:all;overflow-wrap:anywhere;min-width:0}
+.chan button,.chan a.go{background:var(--bg);color:var(--accent);border:none;border-radius:6px;padding:6px 12px;font-weight:600;font-size:.85rem;cursor:pointer;text-decoration:none;font-family:var(--body)}
+footer{padding-block:28px;color:var(--muted);font-size:.85rem}
+
+@media (max-width:860px){
+  .hero .wrap,.case.feature,.two,.contact{grid-template-columns:1fr}
+  .caps,.kit{grid-template-columns:1fr 1fr}
+  .cases{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .caps,.kit{grid-template-columns:1fr}
+  .certs{columns:1}
+  .contact{padding:26px}
+  .hero .wrap{padding-block:44px 40px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .hero h1,.hero .lede,.hero .cta,.ledger{animation:rise .6s ease both}
+  .hero .lede{animation-delay:.08s}.hero .cta{animation-delay:.16s}.ledger{animation-delay:.24s}
+  @keyframes rise{from{transform:translateY(10px)}to{transform:none}}
+}
+</style>
+
+<nav class="top" aria-label="Main">
+  <div class="wrap">
+    <a class="mark" href="#top">Anjali<span>.</span>Mishra</a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#toolkit">Toolkit</a></li>
+      <li><a href="#research">Education &amp; research</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Data Analyst · Monitoring &amp; Evaluation · Lucknow, India</p>
+      <h1>I turn programme data into <em>decisions</em> people can act on.</h1>
+      <p class="lede">Four years of analysing survey, student and placement data for large education and employability programmes in Uttar Pradesh, including World Bank and MSDF initiatives. Now completing an MBA in Data Science and open to relocating for analyst roles.</p>
+      <div class="cta">
+        <a class="btn primary" href="#work">See my work</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <aside class="ledger" aria-label="At a glance">
+      <h2>At a glance</h2>
+      <dl>
+        <dt>4 yrs</dt><dd>in programme monitoring, data analysis and reporting</dd>
+        <dt>2</dt><dd>large-scale initiatives: World Bank and MSDF supported</dd>
+        <dt>3</dt><dd>regions covered: Uttar Pradesh, Haryana and the NCR</dd>
+        <dt>2027</dt><dd>MBA in Data Science, Manipal University Jaipur</dd>
+      </dl>
+    </aside>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><h2 class="sec">What I do</h2></div>
+      <div class="caps">
+        <div class="cap"><span class="k">Analyse</span><h3>Survey &amp; outcome analysis</h3><p>Cleaning and analysing baseline and endline survey data to show what changed for students and schools.</p></div>
+        <div class="cap"><span class="k">Visualise</span><h3>Dashboards &amp; reporting</h3><p>Building dashboards and reports in Excel, Power BI and Tableau that programme teams and partners actually use.</p></div>
+        <div class="cap"><span class="k">Explain</span><h3>Insight for stakeholders</h3><p>Presenting findings to government officials, college partners, employers and students in plain language.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec">Selected work</h2>
+        <p class="sec-note">Projects from my roles at iDreamCareer and Medha Learning Foundation. Programme data is confidential, so these describe the method and the result.</p>
+      </div>
+      <div class="cases">
+        <article class="case feature">
+          <div class="txt">
+            <span class="meta">iDreamCareer · UP Pankh Portal · World Bank supported · 2023–2026</span>
+            <h3>Baseline and endline survey analysis</h3>
+            <p>Analysed survey data from government school students before and after the career guidance programme, and turned it into outcome reports for programme leadership.</p>
+            <dl class="rows">
+              <dt>Role</dt><dd>Data analysis and report writing</dd>
+              <dt>Result</dt><dd>Reports used to review programme impact; recognised for Outstanding Performance on the initiative</dd>
+            </dl>
+            <div class="tags"><span class="tag">Excel</span><span class="tag">Survey analysis</span><span class="tag">Impact reporting</span></div>
+          </div>
+          <div class="flow" aria-label="Analysis process">
+            <div class="step"><b>BASELINE</b><span>Survey students at programme start</span></div>
+            <div class="arrow" aria-hidden="true"></div>
+            <div class="step"><b>CLEAN</b><span>Check, code and organise responses</span></div>
+            <div class="arrow" aria-hidden="true"></div>
+            <div class="step"><b>COMPARE</b><span>Match against endline survey results</span></div>
+            <div class="arrow" aria-hidden="true"></div>
+            <div class="step end"><b>REPORT</b><span>Outcome report for programme leads</span></div>
+          </div>
+        </article>
+
+        <article class="case">
+          <span class="meta">iDreamCareer · UP Pankh Portal</span>
+          <h3>Student and school dashboard reports</h3>
+          <p>Built individual dashboard reports for school students and school-level summaries, working with the programme manager on analysis.</p>
+          <dl class="rows">
+            <dt>Role</dt><dd>Dashboard design and analysis</dd>
+            <dt>Result</dt><dd>Schools and counsellors could see each student's progress at a glance</dd>
+          </dl>
+          <div class="tags"><span class="tag">Power BI</span><span class="tag">Excel</span><span class="tag">Dashboards</span></div>
+        </article>
+
+        <article class="case">
+          <span class="meta">Medha Learning Foundation · 2026–present</span>
+          <h3>College performance dashboards</h3>
+          <p>Building dashboards for college reports that track training, internships and placements across partner colleges.</p>
+          <dl class="rows">
+            <dt>Role</dt><dd>Dashboard owner</dd>
+            <dt>Result</dt><dd>One view of outcomes for college partners and the programme team</dd>
+          </dl>
+          <div class="tags"><span class="tag">Power BI</span><span class="tag">KPI tracking</span><span class="tag">Placements</span></div>
+        </article>
+
+        <article class="case">
+          <span class="meta">Medha Learning Foundation · World Bank projects · 2022–2023</span>
+          <h3>Student progress monitoring</h3>
+          <p>Monitored student progress through the MEET career app and worked with employers to move students into placements across UP, Haryana and the NCR.</p>
+          <dl class="rows">
+            <dt>Role</dt><dd>Monitoring and follow-up</dd>
+            <dt>Result</dt><dd>Progress data guided which students needed support before placement</dd>
+          </dl>
+          <div class="tags"><span class="tag">Programme monitoring</span><span class="tag">MEL</span></div>
+        </article>
+
+        <article class="case">
+          <span class="meta">MA dissertation · Sociology</span>
+          <h3>Career choices of government school students in Lucknow</h3>
+          <p>Designed and ran primary research on the challenges, aspirations and support systems that shape students' career decisions.</p>
+          <dl class="rows">
+            <dt>Role</dt><dd>Researcher: design, fieldwork, analysis</dd>
+            <dt>Result</dt><dd>Evidence base for career guidance in government schools</dd>
+          </dl>
+          <div class="tags"><span class="tag">Research design</span><span class="tag">Primary data</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head"><h2 class="sec">Experience</h2></div>
+      <ol class="timeline">
+        <li class="now">
+          <span class="when">Jan 2026 – present</span>
+          <h3>Manager, Student Relationship</h3>
+          <p class="org">Medha Learning Foundation</p>
+          <ul>
+            <li>Build dashboards for college reporting on training and placement outcomes</li>
+            <li>Manage placements and internships through industry partnerships and placement drives</li>
+            <li>Design employability training and learning cycles for undergraduate and diploma students</li>
+          </ul>
+        </li>
+        <li>
+          <span class="when">Oct 2023 – Jan 2026</span>
+          <h3>Career Specialist</h3>
+          <p class="org">iDreamCareer · UP Pankh Portal</p>
+          <ul>
+            <li>Analysed baseline and endline surveys and produced outcome reports</li>
+            <li>Built dashboard reports for individual school students</li>
+            <li>Ran career counselling for thousands of students in urban and rural government schools</li>
+            <li>Partnered with HCL, NavGurukul, Sathiaa, Techno Institute and MUIT</li>
+          </ul>
+        </li>
+        <li>
+          <span class="when">May 2022 – Jun 2023</span>
+          <h3>Project Assistant</h3>
+          <p class="org">Medha Learning Foundation</p>
+          <ul>
+            <li>Monitored student progress through the MEET career app</li>
+            <li>Supported World Bank youth employability projects in UP, Haryana and the NCR</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="toolkit">
+    <div class="wrap">
+      <div class="sec-head"><h2 class="sec">Toolkit</h2></div>
+      <div class="kit">
+        <div><h3>Data &amp; BI</h3><ul><li>Advanced Excel</li><li>Power BI</li><li>Tableau</li><li>SQL</li></ul></div>
+        <div><h3>Analysis</h3><ul><li>Survey analysis</li><li>Data cleaning</li><li>Trend analysis</li><li>Report writing</li></ul></div>
+        <div><h3>Programme</h3><ul><li>MEL</li><li>Implementation</li><li>Stakeholder management</li><li>Training &amp; facilitation</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="wrap two">
+      <div>
+        <h2 class="sec" style="margin-bottom:22px">Education</h2>
+        <ul class="edu">
+          <li><strong>MBA, Data Science</strong><span class="yr">2027</span><small>Manipal University Jaipur · in progress</small></li>
+          <li><strong>Organisational Leadership</strong><span class="yr">2026</span><small>University of Glasgow · 85.67%</small></li>
+          <li><strong>MA, Sociology</strong><span class="yr">2024</span><small>Maharishi University of Information Technology · 84%</small></li>
+          <li><strong>BA</strong><span class="yr">2022</span><small>Karamat Hussain Muslim Girls PG College · 70%</small></li>
+        </ul>
+        <h3 class="sub" style="margin-top:32px">Certifications</h3>
+        <ul class="certs">
+          <li>Data Analyst, IBM Data Science course</li>
+          <li>Research Methodologies, Queen Mary University of London</li>
+          <li>Leadership Narratives, University of Glasgow</li>
+          <li>National Career Counselling Workshop, Counsellor Council of India</li>
+          <li>Innovative Pedagogies (NEP 2020) symposium</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="sec" style="margin-bottom:22px">Research</h2>
+        <div class="paper">
+          <span class="meta">Journal publication</span>
+          <h3>Transforming Human Development and Wellbeing: Leveraging AI for Optimising Gains and Shaping New Social Paradigms</h3>
+          <p>Journal of AI, Machine Learning &amp; Neural Network, Vol. 4, No. 1</p>
+        </div>
+        <div class="paper">
+          <span class="meta">Recognition</span>
+          <h3>Outstanding Performance, UP Pankh Portal</h3>
+          <p>Awarded by iDreamCareer for work on the World Bank-supported initiative.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <h2>Hiring a data analyst?</h2>
+          <p>I'm open to data analyst and M&amp;E roles, including positions that need relocation. Email is the fastest way to reach me.</p>
+        </div>
+        <div class="chan">
+          <div class="row"><span id="email">am94531127@gmail.com</span><button type="button" id="copyEmail">Copy email</button></div>
+          <div class="row"><span>LinkedIn</span><a class="go" href="https://www.linkedin.com/in/anjali-mishrashreebhuvan0304/" target="_blank" rel="noopener">Open profile</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Anjali Mishra · Lucknow, India · English, Hindi, Bhojpuri, Awadhi</div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('copyEmail');
+  var el=document.getElementById('email');
+  btn.addEventListener('click',function(){
+    var text=el.textContent.trim();
+    function selectIt(){
+      var r=document.createRange();r.selectNodeContents(el);
+      var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+      btn.textContent='Selected, press Ctrl+C';
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy email';},1800);},selectIt);
+    }else{selectIt();}
+  });
+})();
+</script>
+
+</body></html>
